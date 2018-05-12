@@ -3,9 +3,10 @@ package com.androidmov.metadata.service.impl;
 import com.androidmov.metadata.dao.ContentDao;
 import com.androidmov.metadata.entity.po.Content;
 import com.androidmov.metadata.service.ContentService;
-import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * @description: Contents表Service实现类
@@ -18,6 +19,12 @@ public class ContentServiceImpl implements ContentService {
     private ContentDao contentDao;
     @Override
     public Content findById(String mongo_id) {
-        return contentDao.findOne(new ObjectId(mongo_id));
+        return contentDao.findOne(mongo_id);
     }
+
+    @Override
+    public List<Content> findAll() {
+        return contentDao.findAll();
+    }
+
 }

@@ -1,4 +1,4 @@
-package com.androidmov.metadata.service;
+package com.androidmov.metadata.service.impl;
 
 /**
  * @description: Service抽象类

@@ -16,4 +16,7 @@ public interface ContentService {
      * @return
      */
     Content findById(String mongo_id);
+
+    List<Content> findAll();
+
 }

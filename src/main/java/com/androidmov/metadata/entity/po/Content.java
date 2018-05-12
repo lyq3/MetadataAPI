@@ -1,5 +1,8 @@
 package com.androidmov.metadata.entity.po;
 
+
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import java.io.Serializable;
 
 /**
@@ -7,6 +10,7 @@ import java.io.Serializable;
  * @author: 卡卢比
  * @date: 2018-05-12 16:43
  **/
+@Document(collection = "contents")
 public class Content implements Serializable {
     private static final long serialVersionUID = 1L;
     private String id;
