@@ -7,7 +7,7 @@ server:
 #测试环境MongoDB地址
 spring:
     datamongodb:
-        uri: mongodb://name:pass@localhost:27017/dbname
-
+        uri: mongodb://@192.168.2.133:27017/zydata
+#Log4j2配置文件
 logging:
       config: classpath:log4j2-dev.xml
