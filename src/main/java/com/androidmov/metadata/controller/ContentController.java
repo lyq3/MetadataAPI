@@ -3,11 +3,11 @@ package com.androidmov.metadata.controller;
 import com.androidmov.metadata.common.BackData;
 import com.androidmov.metadata.entity.po.Content;
 import com.androidmov.metadata.service.ContentService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -18,23 +18,20 @@ import java.util.List;
  **/
 @RestController
 @RequestMapping("/content")
+@Api(tags = "Contents查询接口")
 public class ContentController {
     @Autowired
     private ContentService contentService;
 
     /**
-     *
+     *根据MongoDB ID查询数据
      * @param id
      * @return
      */
-    @GetMapping("/{id}")
-    public BackData<Content> findById(@PathVariable("id") String id){
+    @GetMapping("/findById")
+    @ApiOperation("根据ID查询Content")
+    public BackData<Content> findById(@ApiParam(value = "MongoDB的ID",required = true)@RequestParam("id")String id){
         Content content = contentService.findById(id);
         return new BackData<Content>().setData(content);
-    }
-    @GetMapping("/findAll")
-    public BackData<List<Content>> findAll(){
-        List<Content> list = contentService.findAll();
-        return new BackData<List<Content>>().setData(list);
     }
 }
