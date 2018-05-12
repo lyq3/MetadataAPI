@@ -17,7 +17,7 @@ import java.util.List;
  * @date: 2018-05-12 16:56
  **/
 @RestController
-@RequestMapping("/contents")
+@RequestMapping("/content")
 public class ContentController {
     @Autowired
     private ContentService contentService;
