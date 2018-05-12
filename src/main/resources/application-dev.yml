@@ -4,6 +4,10 @@ server:
         max-threads: 1000
         min-spare-threads: 30
     port: 80
+#测试环境MongoDB地址
+spring:
+    datamongodb:
+        uri: mongodb://name:pass@localhost:27017/dbname
 
 logging:
       config: classpath:log4j2-dev.xml
