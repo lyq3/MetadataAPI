@@ -2,9 +2,9 @@
 <!--设置log4j2的自身log级别为warn -->
 <configuration status="OFF">
     <properties>
-
-        <Property name="app_name">ds_wt</Property>
-        <Property name="log_path">logs/${app_name}</Property>
+        <!--配置正式环境日志文件位置-->
+        <Property name="app_name">MetadataAPI</Property>
+        <Property name="log_path">${project.basedir}/logs/${app_name}</Property>
 
     </properties>
     <appenders>
