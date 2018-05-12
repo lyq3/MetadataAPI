@@ -7,8 +7,9 @@ server:
 
 #正式环境MongoDB地址
 spring:
-    datamongodb:
-        uri: mongodb://name:pass@localhost:27017/dbname
+    data:
+        mongodb:
+            uri: mongodb://name:pass@localhost:27017/dbname
 #日志
 logging:
       config: classpath:log4j2-pro.xml
